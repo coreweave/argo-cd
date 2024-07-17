@@ -323,6 +323,7 @@ type MergeGenerator struct {
 	Generators []ApplicationSetNestedGenerator `json:"generators" protobuf:"bytes,1,name=generators"`
 	MergeKeys  []string                        `json:"mergeKeys" protobuf:"bytes,2,name=mergeKeys"`
 	Template   ApplicationSetTemplate          `json:"template,omitempty" protobuf:"bytes,3,name=template"`
+	MergeMode  string                          `json:"mergeMode,omitempty" protobuf:"bytes,4,opt,name=mergeMode"`
 }
 
 // NestedMergeGenerator is a MergeGenerator nested under another combination-type generator (MatrixGenerator or
@@ -335,6 +336,7 @@ type MergeGenerator struct {
 type NestedMergeGenerator struct {
 	Generators ApplicationSetTerminalGenerators `json:"generators" protobuf:"bytes,1,name=generators"`
 	MergeKeys  []string                         `json:"mergeKeys" protobuf:"bytes,2,name=mergeKeys"`
+	MergeMode  string                           `json:"mergeMode,omitempty" protobuf:"bytes,3,opt,name=mergeMode"`
 }
 
 // ToNestedMergeGenerator converts a JSON struct (from the K8s resource) to corresponding
