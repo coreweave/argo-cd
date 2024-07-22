@@ -9,6 +9,7 @@ import (
 
 	time "time"
 
+	"github.com/argoproj/argo-cd/v2/applicationset/generators"
 	v1alpha1 "github.com/argoproj/argo-cd/v2/pkg/apis/application/v1alpha1"
 )
 
@@ -18,7 +19,7 @@ type Generator struct {
 }
 
 // GenerateParams provides a mock function with given fields: appSetGenerator, applicationSetInfo, _a2
-func (_m *Generator) GenerateParams(appSetGenerator *v1alpha1.ApplicationSetGenerator, applicationSetInfo *v1alpha1.ApplicationSet, _a2 client.Client) ([]map[string]interface{}, error) {
+func (_m *Generator) GenerateParams(appSetGenerator *v1alpha1.ApplicationSetGenerator, applicationSetInfo *v1alpha1.ApplicationSet, client client.Client) (generators.ParamSets, error) {
 	ret := _m.Called(appSetGenerator, applicationSetInfo, _a2)
 
 	if len(ret) == 0 {
